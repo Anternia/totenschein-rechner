@@ -1,0 +1,568 @@
+/* ==========================================================================
+   Totenschein-Abrechnungsprüfer — Styling
+   anternia Corporate Design
+   ========================================================================== */
+
+:root {
+    --color-primary: #266a9b;
+    --color-primary-dark: #1D4C7F;
+    --color-primary-light: #169FE6;
+    --color-button: #0675af;
+    --color-button-hover: #055d8c;
+    --color-accent: #29b0f6;
+    --color-bg: #f4f4f4;
+    --color-bg-white: #ffffff;
+    --color-text: #333333;
+    --color-text-muted: #747474;
+    --color-border: #e0e0e0;
+    --color-gruen: #2e7d32;
+    --color-gruen-bg: #e8f5e9;
+    --color-gruen-border: #a5d6a7;
+    --color-gelb: #f57f17;
+    --color-gelb-bg: #fff8e1;
+    --color-gelb-border: #ffe082;
+    --color-rot: #c62828;
+    --color-rot-bg: #ffebee;
+    --color-rot-border: #ef9a9a;
+    --color-info-bg: #e3f2fd;
+    --color-info-border: #90caf9;
+    --font-family: 'Trebuchet MS', Arial, sans-serif;
+    --max-width: 680px;
+    --radius: 8px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--color-text);
+    background: var(--color-bg);
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Header */
+.header {
+    background: var(--color-primary);
+    color: #fff;
+    padding: 20px 24px;
+    text-align: center;
+}
+
+.header-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+.header .logo-text {
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.85;
+    margin-bottom: 4px;
+}
+
+.header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.header .subtitle {
+    font-size: 14px;
+    opacity: 0.8;
+    margin-top: 4px;
+}
+
+/* Main Content */
+.main {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 24px 16px 40px;
+}
+
+/* Intro */
+.intro {
+    background: var(--color-bg-white);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    margin-bottom: 24px;
+    border: 1px solid var(--color-border);
+}
+
+.intro p {
+    font-size: 15px;
+    color: var(--color-text-muted);
+}
+
+/* Steps */
+.step {
+    display: none;
+    background: var(--color-bg-white);
+    border-radius: var(--radius);
+    padding: 24px;
+    margin-bottom: 16px;
+    border: 1px solid var(--color-border);
+}
+
+.step.active {
+    display: block;
+}
+
+.step-indicator {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+    font-size: 13px;
+    color: var(--color-text-muted);
+}
+
+.step-indicator .step-num {
+    background: var(--color-primary);
+    color: #fff;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.step h2 {
+    font-size: 18px;
+    color: var(--color-primary-dark);
+    margin-bottom: 16px;
+}
+
+/* Formular-Elemente */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+    font-size: 15px;
+}
+
+.form-group .info-text {
+    display: block;
+    font-size: 13px;
+    color: var(--color-text-muted);
+    margin-bottom: 8px;
+}
+
+select,
+input[type="number"],
+input[type="text"] {
+    width: 100%;
+    padding: 12px 14px;
+    border: 2px solid var(--color-border);
+    border-radius: 6px;
+    font-size: 16px;
+    font-family: var(--font-family);
+    color: var(--color-text);
+    background: #fff;
+    transition: border-color 0.2s;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23333' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    padding-right: 40px;
+}
+
+select:focus,
+input:focus {
+    outline: none;
+    border-color: var(--color-primary-light);
+}
+
+input.error,
+select.error {
+    border-color: var(--color-rot);
+}
+
+/* Checkbox-Gruppe */
+.checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 12px 14px;
+    background: #fafafa;
+    border-radius: 6px;
+    border: 1px solid var(--color-border);
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-top: 2px;
+    accent-color: var(--color-primary);
+    flex-shrink: 0;
+}
+
+.checkbox-group .checkbox-label {
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+.checkbox-group .checkbox-label small {
+    display: block;
+    color: var(--color-text-muted);
+    font-size: 13px;
+    margin-top: 2px;
+}
+
+/* Tooltip */
+.tooltip-wrapper {
+    position: relative;
+    display: inline;
+}
+
+.tooltip-trigger {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--color-primary-light);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    vertical-align: middle;
+    margin-left: 4px;
+    line-height: 1;
+}
+
+.tooltip-content {
+    display: none;
+    background: var(--color-primary-dark);
+    color: #fff;
+    padding: 10px 14px;
+    border-radius: 6px;
+    font-size: 13px;
+    line-height: 1.5;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.tooltip-content.visible {
+    display: block;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: var(--font-family);
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.btn-primary {
+    background: var(--color-button);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background: var(--color-button-hover);
+}
+
+.btn-secondary {
+    background: #fff;
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+}
+
+.btn-secondary:hover {
+    background: var(--color-bg);
+}
+
+.button-row {
+    display: flex;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.button-row .btn {
+    flex: 1;
+}
+
+/* Ergebnis */
+#ergebnis {
+    margin-top: 8px;
+}
+
+#ergebnis h2 {
+    font-size: 20px;
+    color: var(--color-primary-dark);
+    margin-bottom: 20px;
+}
+
+/* Positionstabelle */
+.positionen-tabelle {
+    overflow-x: auto;
+    margin-bottom: 24px;
+}
+
+.positionen-tabelle table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.positionen-tabelle th {
+    background: var(--color-primary);
+    color: #fff;
+    padding: 10px 12px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.positionen-tabelle td {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--color-border);
+    vertical-align: top;
+}
+
+.positionen-tabelle .betrag-col {
+    text-align: right;
+    white-space: nowrap;
+    min-width: 100px;
+}
+
+.positionen-tabelle .hinweis {
+    color: var(--color-text-muted);
+    font-size: 12px;
+}
+
+.positionen-tabelle .gesamt-zeile {
+    background: #f0f7fc;
+}
+
+.positionen-tabelle .gesamt-zeile td {
+    border-bottom: none;
+    font-size: 16px;
+    padding: 14px 12px;
+}
+
+/* Vergleichsbox */
+.vergleich {
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    margin-bottom: 24px;
+    border: 2px solid;
+}
+
+.vergleich-gruen {
+    background: var(--color-gruen-bg);
+    border-color: var(--color-gruen-border);
+}
+
+.vergleich-gelb {
+    background: var(--color-gelb-bg);
+    border-color: var(--color-gelb-border);
+}
+
+.vergleich-rot {
+    background: var(--color-rot-bg);
+    border-color: var(--color-rot-border);
+}
+
+.vergleich-info {
+    background: var(--color-info-bg);
+    border-color: var(--color-info-border);
+}
+
+.vergleich-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.vergleich-icon {
+    font-size: 24px;
+    line-height: 1;
+}
+
+.vergleich-gruen .vergleich-icon { color: var(--color-gruen); }
+.vergleich-gelb .vergleich-icon { color: var(--color-gelb); }
+.vergleich-rot .vergleich-icon { color: var(--color-rot); }
+
+.vergleich-titel {
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.vergleich-gruen .vergleich-titel { color: var(--color-gruen); }
+.vergleich-gelb .vergleich-titel { color: var(--color-gelb); }
+.vergleich-rot .vergleich-titel { color: var(--color-rot); }
+
+.vergleich-zahlen {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+}
+
+.vergleich-zahlen .zahl {
+    flex: 1;
+    min-width: 140px;
+}
+
+.vergleich-zahlen .label {
+    display: block;
+    font-size: 12px;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.vergleich-zahlen .wert {
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-text);
+}
+
+.vergleich-text {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* CTA-Box */
+.cta-box {
+    background: var(--color-bg-white);
+    border: 2px solid var(--color-primary);
+    border-radius: var(--radius);
+    padding: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.cta-box p {
+    margin-bottom: 8px;
+}
+
+.btn-cta {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 14px 32px;
+    font-size: 18px;
+}
+
+.cta-sub {
+    margin-top: 12px;
+    font-size: 14px;
+}
+
+.cta-sub a {
+    color: var(--color-primary);
+}
+
+/* Rechtlicher Hinweis */
+.rechtlicher-hinweis {
+    padding: 16px 20px;
+    background: #fafafa;
+    border-radius: var(--radius);
+    margin-bottom: 20px;
+}
+
+.rechtlicher-hinweis small {
+    color: var(--color-text-muted);
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+/* Neu berechnen */
+.neu-berechnen {
+    text-align: center;
+}
+
+/* Footer */
+.footer {
+    background: var(--color-primary);
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 20px 24px;
+    font-size: 13px;
+}
+
+.footer a {
+    color: #fff;
+}
+
+.footer .footer-links {
+    margin-top: 8px;
+}
+
+.footer .footer-links a {
+    margin: 0 8px;
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 18px;
+    }
+
+    .step, .intro {
+        padding: 16px;
+    }
+
+    .button-row {
+        flex-direction: column;
+    }
+
+    .vergleich-zahlen {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .vergleich-zahlen .wert {
+        font-size: 18px;
+    }
+
+    .positionen-tabelle {
+        font-size: 13px;
+    }
+
+    .positionen-tabelle th,
+    .positionen-tabelle td {
+        padding: 8px;
+    }
+
+    .btn-cta {
+        font-size: 16px;
+        padding: 12px 24px;
+    }
+}

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Totenschein-Abrechnungsprüfer | anternia Bestattungen</title>
+    <meta name="description" content="Prüfen Sie die Abrechnung der ärztlichen Leichenschau (Totenschein) schnell und einfach. Kostenloser Service von anternia Bestattungen.">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="header-inner">
+        <div class="logo-text">anternia Bestattungen</div>
+        <h1>Totenschein-Abrechnungsprüfer</h1>
+        <div class="subtitle">Leichenschau-Rechnung einfach prüfen</div>
+    </div>
+</header>
+
+<main class="main">
+
+    <div class="intro">
+        <p>Mit diesem Tool können Sie die Rechnung für die ärztliche Leichenschau (Totenschein) überprüfen. Die Berechnung basiert auf der <strong>Gebührenordnung für Ärzte (GOÄ)</strong>. Beantworten Sie einfach die folgenden Fragen.</p>
+    </div>
+
+    <form id="rechner-form" novalidate>
+
+        <!-- Schritt 1: Art der Leichenschau -->
+        <div class="step active" id="step-1">
+            <div class="step-indicator">
+                <span class="step-num">1</span> Schritt 1 von 4
+            </div>
+            <h2>Art der Leichenschau</h2>
+
+            <div class="form-group">
+                <label for="ziffer">
+                    Welche Leichenschau wurde durchgeführt?
+                    <span class="tooltip-wrapper">
+                        <a href="#" class="tooltip-trigger">?</a>
+                        <span class="tooltip-content">
+                            Die <strong>vorläufige Leichenschau</strong> (Ziffer 100) umfasst die Todesfeststellung und eine vorläufige Todesbescheinigung. Dies ist der Regelfall bei einem Sterbefall zu Hause oder im Pflegeheim.<br><br>
+                            Die <strong>eingehende Leichenschau</strong> (Ziffer 101) ist eine umfassendere Untersuchung mit vollständiger Feststellung der Todesursache.
+                        </span>
+                    </span>
+                </label>
+                <select id="ziffer" required>
+                    <option value="100">Vorläufige Leichenschau (Ziffer 100) — Regelfall</option>
+                    <option value="101">Eingehende Leichenschau (Ziffer 101)</option>
+                </select>
+            </div>
+
+            <div class="form-group" id="dauer-group">
+                <label for="dauer">
+                    Hat die Untersuchung die Mindestdauer erfüllt?
+                    <span class="tooltip-wrapper">
+                        <a href="#" class="tooltip-trigger">?</a>
+                        <span class="tooltip-content">
+                            Die GOÄ sieht eine Mindestdauer vor. Wird diese unterschritten, darf der Arzt nur 60 % des Honorars berechnen. In der Praxis wird die Mindestdauer meist erfüllt.
+                        </span>
+                    </span>
+                </label>
+                <span class="info-text">Mindestdauer für den vollen Satz: 20 Minuten</span>
+                <select id="dauer" required>
+                    <option value="ja">Ja / Weiß ich nicht (Regelfall)</option>
+                    <option value="nein">Nein, die Untersuchung war kürzer</option>
+                </select>
+            </div>
+
+            <div class="form-group" id="zuschlag102-group" style="display:none;">
+                <div class="checkbox-group">
+                    <input type="checkbox" id="zuschlag102">
+                    <label for="zuschlag102" class="checkbox-label">
+                        Zuschlag bei unbekanntem Verstorbenen (Ziffer 102)
+                        <small>Nur bei besonderen Umständen, z.&nbsp;B. unbekannte Identität des Verstorbenen</small>
+                    </label>
+                </div>
+            </div>
+
+            <div class="button-row">
+                <button type="button" class="btn btn-primary btn-weiter">Weiter</button>
+            </div>
+        </div>
+
+        <!-- Schritt 2: Zeitpunkt -->
+        <div class="step" id="step-2">
+            <div class="step-indicator">
+                <span class="step-num">2</span> Schritt 2 von 4
+            </div>
+            <h2>Zeitpunkt der Leichenschau</h2>
+
+            <div class="form-group">
+                <label for="uhrzeit">
+                    Ungefähre Uhrzeit der Leichenschau
+                    <span class="tooltip-wrapper">
+                        <a href="#" class="tooltip-trigger">?</a>
+                        <span class="tooltip-content">
+                            Außerhalb der normalen Zeiten (8–20 Uhr) fallen Zuschläge an. Zwischen 20–22 Uhr bzw. 6–8 Uhr gilt Zuschlag F, zwischen 22–6 Uhr Zuschlag G.
+                        </span>
+                    </span>
+                </label>
+                <select id="uhrzeit" required>
+                    <option value="">Bitte wählen</option>
+                    <option value="8">08:00 – 09:00 Uhr</option>
+                    <option value="9">09:00 – 10:00 Uhr</option>
+                    <option value="10">10:00 – 11:00 Uhr</option>
+                    <option value="11">11:00 – 12:00 Uhr</option>
+                    <option value="12">12:00 – 13:00 Uhr</option>
+                    <option value="13">13:00 – 14:00 Uhr</option>
+                    <option value="14">14:00 – 15:00 Uhr</option>
+                    <option value="15">15:00 – 16:00 Uhr</option>
+                    <option value="16">16:00 – 17:00 Uhr</option>
+                    <option value="17">17:00 – 18:00 Uhr</option>
+                    <option value="18">18:00 – 19:00 Uhr</option>
+                    <option value="19">19:00 – 20:00 Uhr</option>
+                    <option value="20">20:00 – 21:00 Uhr (Zuschlag F)</option>
+                    <option value="21">21:00 – 22:00 Uhr (Zuschlag F)</option>
+                    <option value="22">22:00 – 23:00 Uhr (Zuschlag G)</option>
+                    <option value="23">23:00 – 00:00 Uhr (Zuschlag G)</option>
+                    <option value="0">00:00 – 01:00 Uhr (Zuschlag G)</option>
+                    <option value="1">01:00 – 02:00 Uhr (Zuschlag G)</option>
+                    <option value="2">02:00 – 03:00 Uhr (Zuschlag G)</option>
+                    <option value="3">03:00 – 04:00 Uhr (Zuschlag G)</option>
+                    <option value="4">04:00 – 05:00 Uhr (Zuschlag G)</option>
+                    <option value="5">05:00 – 06:00 Uhr (Zuschlag G)</option>
+                    <option value="6">06:00 – 07:00 Uhr (Zuschlag F)</option>
+                    <option value="7">07:00 – 08:00 Uhr (Zuschlag F)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <div class="checkbox-group">
+                    <input type="checkbox" id="wochenende-feiertag">
+                    <label for="wochenende-feiertag" class="checkbox-label">
+                        Samstag, Sonntag oder Feiertag
+                        <small>Falls die Leichenschau an einem Wochenende oder gesetzlichen Feiertag stattfand (Zuschlag H: 19,82 EUR)</small>
+                    </label>
+                </div>
+            </div>
+
+            <div class="button-row">
+                <button type="button" class="btn btn-secondary btn-zurueck">Zurück</button>
+                <button type="button" class="btn btn-primary btn-weiter">Weiter</button>
+            </div>
+        </div>
+
+        <!-- Schritt 3: Anfahrt -->
+        <div class="step" id="step-3">
+            <div class="step-indicator">
+                <span class="step-num">3</span> Schritt 3 von 4
+            </div>
+            <h2>Anfahrt des Arztes</h2>
+
+            <div class="form-group">
+                <label for="entfernung">
+                    Geschätzte Entfernung der Arztpraxis zum Sterbeort (in km)
+                    <span class="tooltip-wrapper">
+                        <a href="#" class="tooltip-trigger">?</a>
+                        <span class="tooltip-content">
+                            Für die Anfahrt darf der Arzt ein Wegegeld berechnen. Die Höhe richtet sich nach der Entfernung und ob die Fahrt tagsüber (8–20 Uhr) oder nachts (20–8 Uhr) erfolgte. Wenn Sie die Entfernung nicht kennen, lassen Sie das Feld leer oder geben Sie 0 ein.
+                        </span>
+                    </span>
+                </label>
+                <span class="info-text">Falls unbekannt, einfach 0 eingeben oder leer lassen</span>
+                <input type="number" id="entfernung" min="0" max="200" step="1" value="0" placeholder="z. B. 5">
+            </div>
+
+            <div class="button-row">
+                <button type="button" class="btn btn-secondary btn-zurueck">Zurück</button>
+                <button type="button" class="btn btn-primary btn-weiter">Weiter</button>
+            </div>
+        </div>
+
+        <!-- Schritt 4: Rechnungsbetrag & Berechnung -->
+        <div class="step" id="step-4">
+            <div class="step-indicator">
+                <span class="step-num">4</span> Schritt 4 von 4
+            </div>
+            <h2>Ihre Rechnung</h2>
+
+            <div class="form-group">
+                <label for="rechnungsbetrag">
+                    Rechnungsbetrag in Euro (optional)
+                    <span class="tooltip-wrapper">
+                        <a href="#" class="tooltip-trigger">?</a>
+                        <span class="tooltip-content">
+                            Geben Sie den Gesamtbetrag Ihrer Rechnung ein, damit wir ihn mit dem berechneten Betrag vergleichen können. Wenn Sie nur sehen möchten, was die Leichenschau kosten sollte, lassen Sie das Feld einfach leer.
+                        </span>
+                    </span>
+                </label>
+                <span class="info-text">Leer lassen, um nur den erwarteten Betrag zu sehen</span>
+                <input type="text" id="rechnungsbetrag" inputmode="decimal" placeholder="z. B. 150,00" autocomplete="off">
+            </div>
+
+            <div class="button-row">
+                <button type="button" class="btn btn-secondary btn-zurueck">Zurück</button>
+                <button type="submit" class="btn btn-primary">Jetzt prüfen</button>
+            </div>
+        </div>
+
+        <!-- Ergebnis -->
+        <div class="step" id="step-ergebnis">
+            <div id="ergebnis"></div>
+        </div>
+
+    </form>
+
+</main>
+
+<footer class="footer">
+    <div>&copy; anternia Bestattungen — Bundesweit für Sie da</div>
+    <div class="footer-links">
+        <a href="https://www.anternia-bestattungen.de" target="_blank" rel="noopener">anternia-bestattungen.de</a>
+        <a href="tel:08009074890">0800 90 74 890</a>
+    </div>
+</footer>
+
+<script src="js/goae-data.js"></script>
+<script src="js/calculator.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>
